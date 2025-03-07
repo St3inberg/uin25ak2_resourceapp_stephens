@@ -1,0 +1,101 @@
+// Definer variabler
+$font-family: "Montserrat", sans-serif;
+$bg-light: #e1e5ee;
+$primary-color: #2a324b;
+$secondary-color: #58699d;
+$bg-white: #fff;
+
+// Globale stiler
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-light;
+  color: $primary-color;
+  font-weight: 500;
+}
+
+// Header og navigasjon
+header {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  z-index: 2;
+
+  nav {
+    ul.tabs {
+      list-style: none;
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+      margin: 0;
+
+      li {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        border-radius: 2px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        flex-grow: 1;
+        text-align: center;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+
+        &.active {
+          background-color: $bg-white;
+          color: $primary-color;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+// Main-innhold
+main {
+  background-color: $bg-white;
+  width: 100%;
+  max-width: 800px;
+  margin: -1px auto 3rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+
+  #resource-content {
+    h1 {  // Vi bruker h1 her (PageTitle)
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Liste med ressurser
+ul.source-list {
+  list-style: disc;
+  margin-left: 1.5rem;
+
+  li {
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
