@@ -17,7 +17,7 @@ const Resources = ({ category }) => {
           {filteredResources.map((res, index) => (
             <li key={index}>
               <a href={res.url} target="_blank" rel="noopener noreferrer">
-                {res.name}
+                {res.title}
               </a>
             </li>
           ))}
