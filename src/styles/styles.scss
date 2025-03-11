@@ -1,9 +1,15 @@
 // Definer variabler
-$font-family: "Montserrat", sans-serif;
+$font-family: "Montserrat", sans-serif; // Global font, sans-serif
 $bg-light: #e1e5ee;
 $primary-color: #2a324b;
 $secondary-color: #58699d;
 $bg-white: #fff;
+
+// Legg til global fontinnstilling for hele dokumentet
+// Dette sikrer at alle elementer bruker Montserrat, sans-serif
+html, body {
+  font-family: $font-family;
+}
 
 // Globale stiler
 * {
@@ -12,7 +18,7 @@ $bg-white: #fff;
 }
 
 body {
-  font-family: $font-family;
+  font-family: $font-family; // Her settes fonten også for body (kan virke redundant, men er ekstra sikker)
   background-color: $bg-light;
   color: $primary-color;
   font-weight: 500;
@@ -56,6 +62,13 @@ header {
         }
       }
     }
+
+    // Legg til regler for alle lenker i navigasjonen:
+    // Disse reglene fjerner understrek og sikrer at lenkene forblir hvite i alle tilstander
+    a, a:visited, a:hover, a:active, a:focus {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 }
 
@@ -91,10 +104,10 @@ ul.source-list {
   li {
     a {
       color: $secondary-color;
-      text-decoration: none;
+      text-decoration: none; // Ingen understrek for lenker i ressurslisten
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: underline; // Understrek kun ved hover
       }
     }
   }
