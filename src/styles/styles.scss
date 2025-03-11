@@ -5,8 +5,7 @@ $primary-color: #2a324b;
 $secondary-color: #58699d;
 $bg-white: #fff;
 
-// Legg til global fontinnstilling for hele dokumentet
-// Dette sikrer at alle elementer bruker Montserrat, sans-serif
+
 html, body {
   font-family: $font-family;
 }
@@ -63,7 +62,7 @@ header {
       }
     }
 
-    // Legg til regler for alle lenker i navigasjonen:
+   
     // Disse reglene fjerner understrek og sikrer at lenkene forblir hvite i alle tilstander
     a, a:visited, a:hover, a:active, a:focus {
       color: #fff;
