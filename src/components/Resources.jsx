@@ -4,7 +4,7 @@ import resources from '../ressurser';
 import PageTitle from './PageTitle';
 
 const Resources = ({ category }) => {
-  // Filtrer ressursene (bruk lowercase for robust sammenligning)
+  
   const filteredResources = resources.filter(
     resource => resource.category.toLowerCase() === category.toLowerCase()
   );
