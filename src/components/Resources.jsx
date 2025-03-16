@@ -1,12 +1,13 @@
-// src/components/Resources.jsx
-import React from 'react';
-import resources from '../ressurser';
-import PageTitle from './PageTitle';
+import React, { useMemo } from "react";
+import resources from "../ressurser";
+import PageTitle from "./PageTitle";
 
-const Resources = ({ category }) => {
+const Resources = ({ category, noResourcesMessage = "Ingen ressurser funnet for denne kategorien." }) => {
   
-  const filteredResources = resources.filter(
-    resource => resource.category.toLowerCase() === category.toLowerCase()
+  
+  const filteredResources = useMemo(() => 
+    resources.filter(resource => resource.category.toLowerCase() === category.toLowerCase()), 
+    [category]
   );
 
   return (
@@ -14,8 +15,8 @@ const Resources = ({ category }) => {
       <PageTitle title={`${category.toUpperCase()} Ressurser`} />
       {filteredResources.length > 0 ? (
         <ul className="source-list">
-          {filteredResources.map((res, index) => (
-            <li key={index}>
+          {filteredResources.map((res) => (
+            <li key={res.url}> {}
               <a href={res.url} target="_blank" rel="noopener noreferrer">
                 {res.title}
               </a>
@@ -23,7 +24,7 @@ const Resources = ({ category }) => {
           ))}
         </ul>
       ) : (
-        <p>Ingen ressurser funnet for denne kategorien.</p>
+        <p>{noResourcesMessage}</p>
       )}
     </div>
   );

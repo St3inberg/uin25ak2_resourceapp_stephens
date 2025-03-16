@@ -1,15 +1,14 @@
-// src/components/Layout.jsx
-import React from 'react';
-import Nav from './Nav';
+import React from "react";
+import Nav from "./Nav";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, sectionId = "resource-content", className = "" }) => {
   return (
     <>
       <header>
         <Nav />
       </header>
-      <main>
-        <section id="resource-content">
+      <main className={className}>
+        <section id={sectionId}>
           {children}
         </section>
       </main>

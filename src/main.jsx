@@ -1,11 +1,16 @@
-// src/main.jsx
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/styles.scss'; 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./styles/styles.scss"; 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  console.error("Root element not found! React app cannot be mounted.");
+} else {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
